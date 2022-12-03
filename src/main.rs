@@ -1,3 +1,8 @@
+mod command;
+mod error;
+mod task;
+mod config;
+
 fn main() {
-    println!("Hello, Alfred_tool!");
+    command::run();
 }
