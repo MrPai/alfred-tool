@@ -1,7 +1,7 @@
 mod command;
+mod config;
 mod error;
 mod task;
-mod config;
 mod types;
 
 fn main() {

@@ -1,7 +1,6 @@
-
-use std::fs;
 use crate::error::Error;
 use crate::task::*;
+use std::fs;
 use structopt::StructOpt;
 #[derive(Debug, StructOpt)]
 #[structopt(name = "client", about = "Utility for client")]
@@ -41,14 +40,12 @@ pub struct StartCmd {
     /// the password of keystore
     #[structopt(short, long)]
     pub password: Option<String>,
-
 }
-
 
 impl StartCmd {
     fn run(&self) -> Result<(), Error> {
-        println!("{:?}",self);
-        subscan::parse_for_subscan_url(&self.config.json_path,&self.config.output_path);
+        println!("{:?}", self);
+        subscan::parse_for_subscan_url(&self.config.json_path, &self.config.output_path);
         Ok(())
     }
 }
