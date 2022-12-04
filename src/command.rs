@@ -24,7 +24,7 @@ pub struct Config {
     #[structopt(long)]
     pub json_path: String,
     #[structopt(long, default_value = ".local")]
-    pub output_path: String,
+    pub output_dir: String,
 }
 
 #[derive(Debug, StructOpt)]
@@ -44,8 +44,7 @@ pub struct StartCmd {
 
 impl StartCmd {
     fn run(&self) -> Result<(), Error> {
-        println!("{:?}", self);
-        subscan::parse_for_subscan_url(&self.config.json_path, &self.config.output_path);
+        subscan::parse_for_subscan_url(&self.config.json_path, &self.config.output_dir);
         Ok(())
     }
 }

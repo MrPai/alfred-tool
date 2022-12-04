@@ -8,13 +8,17 @@ pub struct Icon {
 
 #[derive(Serialize, Deserialize, Clone, Debug)]
 pub struct Item {
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub uid: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub valid: Option<bool>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub r#type: Option<String>,
     pub title: String,
     pub subtitle: String,
     pub arg: String,
     pub autocomplete: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub icon: Option<Icon>,
 }
 
@@ -33,7 +37,7 @@ impl Item {
     }
 }
 
-#[derive(Serialize, Deserialize, Clone, Debug)]
+#[derive(Serialize, Deserialize, Clone, Debug, Default)]
 pub struct Items {
     pub items: Vec<Item>,
 }

@@ -15,3 +15,4 @@ structopt = "0.3.26"
 serde = { version = "1.0.148", default-features = false, features = ["std", "derive"] }
 serde_json = { version = "1.0.89", default-features = false, features = ["std"] }
 alfred-primitives = { path = "alfred-primitives" }
+log = "0.4.6"
