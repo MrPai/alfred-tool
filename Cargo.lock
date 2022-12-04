@@ -3,10 +3,19 @@
 version = 3
 
 [[package]]
-name = "alfred_tool"
+name = "alfred-primitives"
 version = "0.1.0"
 dependencies = [
+ "serde",
+]
+
+[[package]]
+name = "alfred-tool"
+version = "0.1.0"
+dependencies = [
+ "alfred-primitives",
  "anyhow",
+ "serde",
  "serde_json",
  "structopt",
 ]
@@ -147,6 +156,20 @@ name = "serde"
 version = "1.0.148"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e53f64bb4ba0191d6d0676e1b141ca55047d83b74f5607e6d8eb88126c52c2dc"
+dependencies = [
+ "serde_derive",
+]
+
+[[package]]
+name = "serde_derive"
+version = "1.0.148"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a55492425aa53521babf6137309e7d34c20bbfbbfcfe2c7f3a047fd1f6b92c0c"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
 
 [[package]]
 name = "serde_json"

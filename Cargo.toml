@@ -6,7 +6,12 @@ description = "A binary tool for alfred script."
 license = "MIT OR Apache-2.0"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[profile.release]
+panic           = 'unwind'
+
 [dependencies]
 anyhow = "1.0.66"
 structopt = "0.3.26"
-serde_json = { version = "1.0.79", default-features = false, features = ["std"] }
+serde = { version = "1.0.148", default-features = false, features = ["std", "derive"] }
+serde_json = { version = "1.0.89", default-features = false, features = ["std"] }
+alfred-primitives = { path = "alfred-primitives" }
